@@ -36,11 +36,11 @@
     "dependencies": {
         "@tryghost/constants": "^0.1.6",
         "@tryghost/errors": "^0.2.9",
-        "@tryghost/url-utils": "^2.0.0",
         "fs-extra": "^9.1.0",
         "ghost-storage-base": "0.0.5",
         "moment": "^2.29.1",
-        "sharp": "^0.27.2"
+        "sharp": "^0.27.2",
+        "url-join": "^4.0.1"
     },
     "jest": {
         "collectCoverageFrom": [
