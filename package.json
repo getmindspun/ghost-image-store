@@ -1,7 +1,7 @@
 {
     "name": "ghost-image-store",
     "description": "Ghost storage adapter that automatically creates a webp version of your uploaded images",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "main": "index.js",
     "scripts": {
         "lint": "eslint index.js tests --fix",
@@ -45,7 +45,8 @@
         "moment": "^2.29.1",
         "semver": "^7.3.5",
         "sharp": "^0.28.3",
-        "url-join": "^4.0.1"
+        "url-join": "^4.0.1",
+        "uuid": "^8.3.2"
     },
     "jest": {
         "collectCoverageFrom": [
