@@ -2,7 +2,6 @@ const os = require('os');
 const path = require('path');
 
 const fs = require('fs-extra'); // use fs-extra since we mock it
-const rimraf = require('rimraf');
 
 jest.mock('../../lib/config');
 // for moment
@@ -28,7 +27,7 @@ describe('read', () => {
         expect(result.equals(result)).toBeTruthy();
 
         process.chdir(__dirname);
-        rimraf.sync(tmpDir);
+        fs.removeSync(tmpDir);
     });
 
     it('should fail with ENOENT', async () => {

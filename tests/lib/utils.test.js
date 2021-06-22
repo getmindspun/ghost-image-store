@@ -1,8 +1,6 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
-
-const rimraf = require('rimraf');
 
 const utils = require('../../lib/utils');
 
@@ -25,9 +23,9 @@ describe('utils', () => {
             fs.writeFileSync(filePath, JSON.stringify(config));
 
             expect(utils.findConfigJson(startPath)).toStrictEqual(filePath);
-            
+
             process.chdir(__dirname);
-            rimraf.sync(tmpDir);
+            fs.removeSync(tmpDir);
         });
 
         it('should load development.json', () => {
@@ -52,7 +50,7 @@ describe('utils', () => {
             expect(utils.loadConfig(startPath)).toStrictEqual(expected);
 
             process.chdir(__dirname);
-            rimraf.sync(tmpDir);
+            fs.removeSync(tmpDir);
         });
 
         it('should return null', () => {

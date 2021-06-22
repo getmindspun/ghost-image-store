@@ -3,7 +3,6 @@ const os = require('os');
 
 const sharp = require('sharp');
 const fs = require('fs-extra');
-const rimraf = require('rimraf');
 
 jest.mock('../../lib/config');
 // for moment
@@ -44,7 +43,7 @@ describe('save', () => {
         expect(fs.pathExistsSync(webpPath)).toBeTruthy();
 
         process.chdir(__dirname);
-        rimraf.sync(tmpDir);
+        fs.removeSync(tmpDir);
     });
 
     it('should fail to convert tiff', async () => {
@@ -81,7 +80,7 @@ describe('save', () => {
         expect(!fs.pathExistsSync(webpPath)).toBeTruthy();
 
         process.chdir(__dirname);
-        rimraf.sync(tmpDir);
+        fs.removeSync(tmpDir);
     });
 
     it('should fail webp conversion', async () => {
@@ -127,7 +126,7 @@ describe('save', () => {
         expect(consoleError).toHaveBeenCalled();
 
         process.chdir(__dirname);
-        rimraf.sync(tmpDir);
+        fs.removeSync(tmpDir);
         toFile.mockClear();
         consoleError.mockClear();
     });

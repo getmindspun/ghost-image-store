@@ -1,8 +1,6 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const os = require('os');
 const path = require('path');
-
-const rimraf = require('rimraf');
 
 jest.mock('../../lib/config');
 // for moment
@@ -32,7 +30,7 @@ describe('saveAs', () => {
         expect(content).toStrictEqual('test');
 
         process.chdir(__dirname);
-        rimraf.sync(tmpDir);
+        fs.removeSync(tmpDir);
     });
 
     it('should throw error', async () => {

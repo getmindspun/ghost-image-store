@@ -1,8 +1,6 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const os = require('os');
 const path = require('path');
-
-const rimraf = require('rimraf');
 
 jest.mock('../../lib/config');
 // for moment
@@ -27,6 +25,6 @@ describe('saveRawAs', () => {
         expect(fs.readFileSync(filePath, 'utf-8')).toStrictEqual('test');
 
         process.chdir(__dirname);
-        rimraf.sync(tmpDir);
+        fs.removeSync(tmpDir);
     });
 });

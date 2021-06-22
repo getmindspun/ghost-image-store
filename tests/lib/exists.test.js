@@ -1,8 +1,6 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const os = require('os');
 const path = require('path');
-
-const rimraf = require('rimraf');
 
 jest.mock('../../lib/config');
 
@@ -23,6 +21,6 @@ describe('exists', () => {
         expect(await store.exists('54321.jpg')).toBeFalsy();
 
         process.chdir(__dirname);
-        rimraf.sync(tmpDir);
+        fs.removeSync(tmpDir);
     });
 });

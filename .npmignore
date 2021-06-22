@@ -7,3 +7,4 @@ __mocks__
 /.env
 /.eslintrc.js
 /*.lock
+/dist
