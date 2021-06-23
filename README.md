@@ -1,4 +1,4 @@
-![GitHub](https://img.shields.io/github/license/ghoststead/ghost-image-store?label=License)
+![GitHub](https://img.shields.io/github/license/getmindspun/ghost-image-store?label=License)
 ![Coverage](./badges/coverage.svg)
 
 # ghost-image-store
