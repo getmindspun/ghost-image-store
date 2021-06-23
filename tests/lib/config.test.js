@@ -15,4 +15,10 @@ describe('config', () => {
         };
         expect(config.getContentPath('images')).toStrictEqual('/bar/content/images');
     });
+
+    it('getContentUrl', () => {
+        expect.assertions(1);
+        config.url = 'https://example.com/blog';
+        expect(config.getContentUrl('file.jpg')).toStrictEqual('/blog/content/images/file.jpg');
+    });
 });

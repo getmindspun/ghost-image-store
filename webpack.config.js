@@ -16,7 +16,6 @@ module.exports = {
         }
     },
     externals: {
-        sharp: 'commonjs sharp',
-        express: 'commonjs express'
+        sharp: 'commonjs sharp'
     }
 };
